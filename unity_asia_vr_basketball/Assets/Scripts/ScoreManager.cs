@@ -24,7 +24,8 @@ public class ScoreManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //如果 碰撞物件標籤為籃球就加分
-        if (other.tag=="籃球")
+        //而且(&&) 籃球的高度>2.5   須看籃球高度超過三分區塊高度 分數才不會出bug
+        if (other.tag=="籃球"&& other.transform.position.y>2.5f)
         {
             AddScore();
         }
